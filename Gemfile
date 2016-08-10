@@ -18,6 +18,7 @@ gem 'mini_magick'
 gem 'figaro'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'pundit'
 
 # gem 'redis', '~> 3.0'
 
