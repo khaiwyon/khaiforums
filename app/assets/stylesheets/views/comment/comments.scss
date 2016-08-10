@@ -1,0 +1,93 @@
+.comment{
+  .titleedit {
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+    color: #230918;
+    margin: 10px;
+  }
+  .postparent {
+    max-width: 900px;
+    margin: 30px auto;
+    justify-content: space-between;
+  }
+  .postchild{
+    flex: wrap;
+    border-style: solid;
+    border-color: black;
+    margin: 20px;
+    justify-content: space-around;
+    align-items: center;
+    display: inline-block;
+    width: 400px;
+    padding: 10px;
+    background-color: white;
+  }
+  .h3typewording{
+    font-size: 25px;
+    font-style: bold;
+    height: 50px;
+    margin-top: 10;
+    margin-bottom: 10;
+    background-color:white;
+    font-family: 'Exo', sans-serif;
+  }
+  h5 {
+    font-style: bold;
+    height: 25px;
+    margin-bottom: 10;
+    background-color:white;
+    font-family: 'Libre Baskerville', serif;
+  }
+  .break3 {
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  .ANTwording{
+    font-size: 25px;
+    font-style: bold;
+    height: 50px;
+    margin-top: 10;
+    margin-bottom: 10;
+    font-family: 'Exo', sans-serif;
+  }
+
+  .ANTedit{
+    max-width: 500px;
+    margin: 50px auto;
+    border-style: solid;
+    border-color: black;
+    padding: 10px;
+    background-color: white;
+  }
+
+  .red-link {
+    text-decoration: none;
+    color: #cc2121;
+      &:hover {
+        text-decoration: none;
+        color: green;
+      }
+  }
+  .blue-link {
+    text-decoration: none;
+    color: #234067;
+      &:hover {
+        text-decoration: none;
+        color: green;
+      }
+  }
+
+  .topicpic {
+    background-image: asset-url("woodburning.jpg");
+    height: calc(100vh - 52px);
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -22,7 +22,7 @@ class CommentsController <ApplicationController
       redirect_to topic_post_comments_path(@topic, @post)
       flash[:success] = "You've created a new comment."
     else
-      redirect_to new_topic_post_comments_path(@topic, @post,@comment)
+      redirect_to new_topic_post_comment_path(@topic, @post, @comment)
       flash[:danger] = @comment.errors.full_messages
     end
   end
