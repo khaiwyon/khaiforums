@@ -1,24 +1,5 @@
-# README
+# ToDo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Move files from old project folder into this one
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Move file by file, arranging the syntax and fixing it where any problems may have occured.
