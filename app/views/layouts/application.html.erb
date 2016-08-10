@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Khaiforums</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Magicforums
+      </title>
+      <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%=javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div id="header">
+      <%= render partial: 'partials/header' %>
+    </div>
+    <div id="flash-messages-container">
+      <%= render partial: "partials/flash_messages" %>
+    </div>
     <%= yield %>
   </body>
 </html>

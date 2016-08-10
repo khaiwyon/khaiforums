@@ -1,0 +1,24 @@
+#header {
+  height: 52px;
+  z-index: 1;
+  font-style: bold;
+
+  .navbar-fontsize{
+    font-size: 30px;
+    color: black;
+  }
+
+  .navbar {
+    margin-bottom: 0;
+    height: 28px;
+    margin-bottom: 0;
+    background-color:white;
+    border-color: black;
+    font-size: 18px;
+  }
+
+  a, a:visited{
+    color:black;
+    font-family: 'Pattaya', sans-serif;
+  }
+}
