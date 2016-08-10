@@ -1,0 +1,13 @@
+<div class = "post">
+  <h1>
+    <%= @post.title %>
+  </h1>
+  <h3>
+    <%= @post.body %>
+  </h3>
+
+  <%= link_to "Edit", edit_topic_post_path(@post) %>
+  <div class="break3">
+  </div>
+  <%= link_to "Delete", topic_posts_path(@post), method: :delete, data:{confirm: "ARE YOU SURE YOU WANT TO DELETE THIS FILE?"} %>
+</div>
