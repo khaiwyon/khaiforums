@@ -1,0 +1,159 @@
+.landing {
+  .background {
+      background-image: asset-url("squirel.jpg");
+      height: calc(100vh - 52px);
+      width: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .background{
+  color: yellow;
+  }
+
+  .size-100 {
+    font-size: 80px;
+    font-family: 'Pattaya', sans-serif
+  }
+
+  h5 {
+    font-size: 30px;
+  }
+
+  .background-2 {
+      background-color: yellow;
+      height: 50vh;
+      width: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    justify-content: center;
+
+  }
+
+  .feature {
+    flex: 0 0 280px;
+    margin: 20px 10px;
+  }
+
+  .images {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    justify-content: center;
+  }
+
+  .images {
+    position: relative
+  }
+
+  @media all and (max-width: 1200px) {
+    .features { max-width: 600px;
+      }
+    }
+
+  .imagesx {
+    width: 280px;
+    height: 250px;
+
+  }
+
+
+  .images {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    justify-content: center;
+
+  }
+
+  .image {
+    flex: 0 0 280px;
+    margin: 20px 10px;
+    position: relative;
+  }
+
+  @media all and (max-width: 1200px) {
+    .image {
+      max-width: 600px;
+    }
+  }
+
+  .image:hover .invisible-layout {
+    opacity: 0.6;
+    transition: all 0.8s ease-in-out;
+  }
+
+  .invisible-layout {
+    font-style:bold;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3 {
+    font-size: 30px;
+    color: black;
+  }
+
+  .featurecolor {
+    color: orange;
+  }
+
+  .endingtext {
+    color: blue
+  }
+
+  .background-3 {
+      background-color: white;
+      height: 50vh;
+      width: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .short-underline {
+    width: 50px;
+    border-bottom: 2px solid orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .endingfeatures {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    justify-content: center;
+  }
+
+  .lastinfo {
+    font-size: 18px
+  }
+}

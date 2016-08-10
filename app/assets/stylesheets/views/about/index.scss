@@ -1,0 +1,71 @@
+.about {
+  .topbackground {
+    background-image: asset-url("aboutliber8.jpg");
+    height: 50vh;
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .aboutbackground{
+    background-image: asset-url("snail.jpeg");
+    height: calc(100vh- 40px);
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.75;
+  }
+
+  .aboutauthorword {
+    font-size: 80px;
+    color: black;
+    font-style: bold;
+    justify-content: center;
+    align-items: center;
+    opacity: 1.0;
+  }
+
+  .aboutinformation {
+    font-size: 25px;
+    font-family: 'Libre Baskerville', sans-serif;
+    height: calc(100vh- 40px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .aboutinformationelement {
+    flex: 0 0 70%;
+    line-height: 150%;
+  }
+
+  .break {
+    height: calc(300vh- 50px);
+  }
+
+  .myinfo {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    justify-content: center;
+  }
+
+  .contactinfo {
+    flex: 0 0 280px;
+    margin: 20px 10px;
+  }
+
+  .break2 {
+    height: calc(100vh- 30px);
+  }
+}

@@ -16,6 +16,9 @@ gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
 gem 'figaro'
+gem 'font-awesome-rails'
+gem 'bootstrap-sass', '~> 3.3.3'
+
 # gem 'redis', '~> 3.0'
 
 group :development, :test do
