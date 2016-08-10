@@ -56,10 +56,7 @@
     max-width: 1200px;
     margin: 50px auto;
     justify-content: center;
-  }
-
-  .images {
-    position: relative
+    position: relative;
   }
 
   .image:hover .invisible-layout {
@@ -135,22 +132,10 @@
       height: 250px;
     }
 
-    .images {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 50px auto;
-      justify-content: center;
-
-    }
-
     .image {
       flex: 0 0 280px;
       margin: 20px 10px;
       position: relative;
-    }
-
-    .image {
       max-width: 600px;
     }
   }
