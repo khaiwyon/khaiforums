@@ -1,0 +1,17 @@
+<div class="topic">
+  <div class="titleedit text-center">
+    <%= @topic.title %>
+  </div>
+
+  <section class="topicparent text-center">
+    <div class="topicchild text-center">
+      <div class="h3typewording">
+        <%= @topic.description %>
+      </div>
+      <%= link_to "Edit", edit_topic_posts_path(@topic) %>
+      <div class="break3">
+      </div>
+      <%= link_to "Delete", topic_path(@topic), method: :delete, data:{confirm: "ARE YOU SURE YOU WANT TO DELETE THIS FILE?"} %>
+    </div>
+  </section>
+</div>
