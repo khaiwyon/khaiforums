@@ -1,14 +1,14 @@
 .landing {
   .background {
-      background-image: asset-url("squirel.jpg");
-      height: calc(100vh - 52px);
-      width: 100%;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    background-image: asset-url("squirel.jpg");
+    height: calc(100vh - 52px);
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .background{
@@ -25,15 +25,15 @@
   }
 
   .background-2 {
-      background-color: yellow;
-      height: 50vh;
-      width: 100%;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    background-color: yellow;
+    height: 50vh;
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .features {
@@ -60,39 +60,6 @@
 
   .images {
     position: relative
-  }
-
-  @media all and (max-width: 1200px) {
-    .features { max-width: 600px;
-      }
-    }
-
-  .imagesx {
-    width: 280px;
-    height: 250px;
-
-  }
-
-
-  .images {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 50px auto;
-    justify-content: center;
-
-  }
-
-  .image {
-    flex: 0 0 280px;
-    margin: 20px 10px;
-    position: relative;
-  }
-
-  @media all and (max-width: 1200px) {
-    .image {
-      max-width: 600px;
-    }
   }
 
   .image:hover .invisible-layout {
@@ -155,5 +122,37 @@
 
   .lastinfo {
     font-size: 18px
+  }
+
+  @media all and (max-width: 1200px) {
+
+    .features { max-width: 600px;
+      }
+    }
+
+    .imagesx {
+      width: 280px;
+      height: 250px;
+    }
+
+
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 50px auto;
+      justify-content: center;
+
+    }
+
+    .image {
+      flex: 0 0 280px;
+      margin: 20px 10px;
+      position: relative;
+    }
+
+    .image {
+      max-width: 600px;
+    }
   }
 }
