@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: khaiforums_production
-  username: khaiforums
+  database: d5an481i09bouk
+  username: wpzwwvtksyypca
   password: <%= ENV['KHAIFORUMS_DATABASE_PASSWORD'] %>
