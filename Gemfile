@@ -20,7 +20,6 @@ gem 'font-awesome-rails'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'pundit'
 gem 'responders'
-gem 'remotipart', '~> 1.2'
 
 # gem 'redis', '~> 3.0'
 
