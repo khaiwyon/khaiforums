@@ -5,18 +5,18 @@ class TopicPolicy < ApplicationPolicy
   end
 
   def create?
-    new?
+    user.present? && user.admin?
   end
 
   def edit?
-    new?
+    user.present? && user.admin?
   end
 
   def update?
-    new?
+    user.present? && user.admin?
   end
 
   def destory?
-    new?
+    user.present? && user.admin?
   end
 end

@@ -11,6 +11,7 @@ class CommentsController <ApplicationController
     @post= Post.find_by(id: params[:post_id])
     @topic =Topic.includes(:posts).find_by(id:params[:topic_id])
     @comment= Comment.new
+    authorize @comment
   end
 
   def create
@@ -31,6 +32,7 @@ class CommentsController <ApplicationController
     @topic = Topic.find_by(id: params[:topic_id])
     @post = Post.find_by(id: params[:post_id])
     @comment = Comment.find_by(id: params[:id])
+    authorize @comment
   end
 
   def update

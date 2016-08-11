@@ -24,6 +24,7 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find_by(id: params[:id])
+    authorize @topic
   end
 
   def update
