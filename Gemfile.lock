@@ -280,6 +280,9 @@ GEM
       builder
       nokogiri (>= 1.4.1)
       trollop
+    remotipart (1.2.1)
+    responders (2.2.0)
+      railties (>= 4.2.0, < 5.1)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -336,6 +339,8 @@ DEPENDENCIES
   puma (~> 3.0)
   pundit
   rails (~> 5.0.0)
+  remotipart (~> 1.2)
+  responders
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
