@@ -1,13 +1,13 @@
 <div class = "post">
-  <%= form_for(@post, url: topic_post_path(@topic, @post), html: { id: "post-create-form" }) do |f| %>
+  <%= form_for(post, url: topic_post_path(topic, post),remote: true, html: { id: "post-create-form" }) do |f| %>
 
   <div class = "form-group">
     <h4 class = "text-center">
       Post Image
     </h4>
     <div id = "preview-image">
-      <% if @post.image? %>
-      <%= image_tag @post.image, class: "img-settings img-responsive center-block" %>
+      <% if post.image? %>
+      <%= image_tag post.image, class: "img-settings img-responsive center-block" %>
       <% end %>
     </div>
   </div>
@@ -43,6 +43,10 @@
 
     <div class = "form-group text-center">
       <%= f.submit "Confirm Edit", class: "btn btn-success btn-lg" %>
+    </div>
+
+    <div class = "btn btn-success btn-lg", id="cancel-<%= post.id %>">
+      Cancel
     </div>
     <% end %>
   </div>

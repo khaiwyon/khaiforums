@@ -3,31 +3,13 @@
     Topics
   </div>
 
-  <section class="topicparent">
+  <div id="topics">
     <% @topics.each do |topic| %>
-      <div class="topicchild text-center">
-        <div class="h3typewording">
-          <%= topic.title %>
-        </div>
-        <div class="topicpic">
-          <div class="break3">
-          </div>
-        </div>
-        <h5>
-          <%= topic.description %>
-        </h5>
-        <%= link_to "Enter Topic", topic_posts_path(topic), class: 'red-link' %>
-        <div class="break3">
-        </div>
-        <%= link_to "Edit", edit_topic_path(topic), class: 'blue-link' %>
-        <%= link_to "Delete", topic_path(topic), class: 'blue-link', method: :delete, data:{confirm: "ARE YOU SURE YOU WANT TO DELETE THIS FILE?"} %>
-      </div>
+    <%= render partial: "topic", locals: { topic: topic } %>
     <% end %>
-  </section>
-
-  <section class="ANTedit">
-    <div class="ANTwording text-center">
-      <%= link_to "Add New Topic", new_topic_path, class: 'white-link' %>
-    </div>
-  </section>
+  </div>
+  <%= paginate @topics %>
+  <div id="topic-form-container">
+    <%= render partial: "topic_form", locals: { topic: @topic } %>
+  </div>
 </div>

@@ -1,28 +1,22 @@
 class PostsController < ApplicationController
+  respond_to :js
   before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
 
   def index
     @topic= Topic.includes(:posts).find_by(id: params[:topic_id])
-    @post = @topic.posts.order(id: :DESC)
-  end
-
-
-  def new
-    @topic = Topic.find_by(id: params[:topic_id])
+    @posts = @topic.posts.order(id: :DESC)
     @post = Post.new
-    authorize @post
   end
 
   def create
     @topic= Topic.find_by(id: params[:topic_id])
     @post= current_user.posts.build(post_params.merge(topic_id:params[:topic_id]))
+    @new_post = Post.new
 
     if @post.save
-      flash[:success] = "You've created a new post."
-      redirect_to topic_posts_path(@topic)
+      flash.now[:success] = "You've created a new post."
     else
-      flash[:danger] = @post.errors.full_messages
-      redirect_to new_topic_post_path(@topic)
+      flash.now[:danger] = @post.errors.full_messages
     end
   end
 
@@ -37,11 +31,9 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
 
     if @post.update(post_params)
-      flash[:success] = "You've edited a new post."
-      redirect_to topic_posts_path(@topic)
+      flash.now[:success] = "You've edited a new post."
     else
-      flash[:danger] = @post.errors.full_messages
-      redirect_to edit_topic_post_path(@topic, @post)
+      flash.now[:danger] = @post.errors.full_messages
     end
    end
 
@@ -51,7 +43,7 @@ class PostsController < ApplicationController
     @topic = @post.topic
     authorize @post
     if @post.destroy
-      redirect_to topic_posts_path(@topic)
+      flash.now[:success] = "You've deleted a new post."
     end
   end
 

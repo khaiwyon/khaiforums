@@ -1,3 +1,8 @@
-<%= comment.body %>
-  <%= link_to "Edit", edit_topic_post_comment_path(@topic, @post, comment) %>
-    <%= link_to "Delete", topic_post_comment_path(@topic, @post, comment), method: :delete, data:{confirm: "Confirm Delete?"} %>
+<div class= "commentpartial" data-id="<%=comment.id%>">
+  <%= comment.body %>
+    <div class= "editdeletebutton">
+      <%= link_to "Edit", edit_topic_post_comment_path(@topic, @post, comment) %>
+      <%= link_to "Delete", topic_post_comment_path(@topic, @post, comment), method: :delete, data:{confirm: "Confirm Delete?"} %>
+    </div>
+      <%= image_tag comment.image %>
+</div>

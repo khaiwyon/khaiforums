@@ -1,6 +1,7 @@
 class Topic < ApplicationRecord
   has_many :posts
   belongs_to :user
+  paginates_per 2
 
   mount_uploader :image, ImageUploader
 

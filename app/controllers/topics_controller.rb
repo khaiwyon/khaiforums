@@ -1,24 +1,20 @@
 class TopicsController < ApplicationController
+  respond_to :js
   before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
 
   def index
-    @topics = Topic.all.order(id: :DESC)
-  end
-
-  def new
+    @topics = Topic.order(id: :DESC).page params[:page]
     @topic = Topic.new
-    authorize @topic
   end
 
   def create
     @topic = current_user.topics.build(topic_params)
+    @new_topic = Topic.new
 
     if @topic.save
-      flash[:success] = "You've created a new topic."
-      redirect_to topics_path
+      flash.now[:success] = "You've created a new topic."
     else
-       flash[:danger] = @topic.errors.full_messages
-      redirect_to new_topic_path
+       flash.now[:danger] = @topic.errors.full_messages
     end
   end
 
@@ -31,11 +27,9 @@ class TopicsController < ApplicationController
     @topic = Topic.find_by(id: params[:id])
 
     if @topic.update(topic_params)
-      flash[:success] = "You've successfully edited this topic."
-      redirect_to topics_path
+      flash.now[:success] = "You've successfully edited this topic."
     else
-      redirect_to edit_topic_path(@topic)
-      flash[:danger] = @topic.errors.full_messages
+      flash.now[:danger] = @topic.errors.full_messages
     end
  end
 

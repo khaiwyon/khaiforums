@@ -1,13 +1,15 @@
-<div class= "comments">
-  <h5>
-    <div id="comments">
-      <% @comments.each do |comment| %>
-        <%= render partial: "comment", locals: { comment: comment, post: @post } %>
-      <% end %>
-    </div>
-  </h5>
+<div class= "comments.index" data-id="<%=@post.id%>">
+  <div class = "commentscontainer">
+    <h5>
+      <div id="comments">
+        <% @comments.each do |comment| %>
+          <%= render partial: "comment", locals: { comment: comment, post: @post } %>
+        <% end %>
+      </div>
+    </h5>
 
-  <div id="comments-form-container">
-    <%= render partial: "comment_form", locals: { comment: @comment, post: @post } %>
+    <div id="comments-form-container">
+      <%= render partial: "comment_form", locals: { comment: @comment, post: @post } %>
+    </div>
   </div>
 </div>

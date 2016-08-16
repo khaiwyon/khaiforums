@@ -1,0 +1,5 @@
+console.log("Hello")
+$('#post-<%= @post.id %>').html("<%=j render partial: 'posts/post_edit', locals: {topic: @topic, post: @post} %>")
+
+$('#cancel-<%= @post.id %>').on("click" , function() { $('#post-<%= @post.id %>').html("<%=j render partial: 'posts/post', locals: {topic: @topic, post: @post} %>")
+})

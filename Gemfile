@@ -20,8 +20,9 @@ gem 'font-awesome-rails'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'pundit'
 gem 'responders'
-
-# gem 'redis', '~> 3.0'
+gem 'remotipart', github: 'sr3d/remotipart'
+gem 'kaminari'
+gem 'redis', '~> 3.2'
 
 group :development, :test do
   gem 'pry'

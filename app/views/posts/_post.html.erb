@@ -1,0 +1,19 @@
+<div id = "post-<%=post.id%>">
+  <section class = "postparent">
+    <div class = "postchild text-center">
+      <div class = "h3typewording">
+        <%= post.title %>
+      </div>
+      <h5><%= post.body.html_safe %>
+      </h5>
+      <%= image_tag post.image %>
+      <div class = "break3">
+      </div>
+      <%= link_to "Show Comments", topic_post_comments_path(topic, post), class: 'red-link' %>
+      <div class = "break3">
+      </div>
+      <%= link_to "Edit", edit_topic_post_path(topic, post), remote: true, class: 'blue-link' %>
+      <%= link_to "Delete", topic_post_path(topic, post), remote: true, class: 'blue-link', method: :delete, data:{confirm: "ARE YOU SURE YOU WANT TO DELETE THIS FILE?"} %>
+    </div>
+  </section>
+</div>

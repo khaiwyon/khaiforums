@@ -1,5 +1,5 @@
 <div class="topic">
-  <%= form_for(@topic, url: topics_path, html: { id: "topic-create-form" }) do |f| %>
+  <%= form_for(topic, url: topics_path(topic), method: :post, authenticity_token: true, remote: true, html: { id: "topic-create-form", multipart: true }) do |f| %>
     <div class="EditCreateStyle text-center">
       New Topic
     </div>

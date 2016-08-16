@@ -4,30 +4,14 @@
       Posts
     </div>
 
-    <section class = "postparent">
-      <% @post.each do |post| %>
-      <div class = "postchild text-center">
-        <div class = "h3typewording">
-          <%= post.title %>
-        </div>
-        <h5><%= post.body %>
-        </h5>
-        <%= image_tag post.image %>
-        <div class = "break3">
-        </div>
-        <%= link_to "Enter post", topic_post_comments_path(@topic, post), class: 'red-link' %>
-        <div class = "break3">
-        </div>
-        <%= link_to "Edit", edit_topic_post_path(@topic, post), class: 'blue-link' %>
-        <%= link_to "Delete", topic_post_path(@topic, post), class: 'blue-link', method: :delete, data:{confirm: "ARE YOU SURE YOU WANT TO DELETE THIS FILE?"} %>
-      </div>
+    <div id="posts">
+      <% @posts.each do |post| %>
+        <%= render partial: "post", locals: { post: post, topic: @topic } %>
       <% end %>
-    </section>
+    </div>
 
-    <section class = "ANTedit">
-      <div class = "ANTwording text-center">
-        <%= link_to "Add New post", new_topic_post_path %>
-      </div>
-    </section>
+    <div id="posts-form-container">
+      <%= render partial: "post_form", locals: { post: @post, topic: @topic } %>
+    </div>
   </div>
 </div>
