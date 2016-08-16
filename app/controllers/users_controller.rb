@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     if @user.update(user_params)
       flash[:success] = "You've successfully edited your User"
-      redirect_to topics_path
+      redirect_to root_path
     else
       flash[:danger] = @user.errors.full_messages
       redirect_to edit_user_path(@user)

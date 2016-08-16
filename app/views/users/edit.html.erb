@@ -1,5 +1,5 @@
 <div class="Users">
-  <%= form_for(@user, url: users_path, html: {id: "user-create-form"}) do |f| %>
+  <%= form_for(@user, url: user_path(@user), html: {id: "user-create-form"}) do |f| %>
     <div class="form-group">
       <h4 class="text-center">
         User Image
