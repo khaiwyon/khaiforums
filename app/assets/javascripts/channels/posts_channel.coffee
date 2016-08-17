@@ -13,12 +13,12 @@ postsChannelFunctions = () ->
   updateComment = (data) ->
     console.log(data)
     if $('.indexcomments').data().id == data.post.id
-      $('#commentpartial-<%=@comment.id%>').replaceWith(data.partial)
-      checkMe(data.comment.id, data.username)
+      $("#commentpartial-#{data.comment.id}").replaceWith(data.partial)
+      checkMe(data.comment.id, data.username)#testcheck
 
   destroyComment = (data) ->
     console.log(data)
-    $('#commentpartial-<%=@comment.id%>').remove()
+    $("#commentpartial-#{data.comment.id}").remove()
 
   if $('.indexcomments').length > 0
     App.posts_channel = App.cable.subscriptions.create {
