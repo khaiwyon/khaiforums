@@ -1,11 +1,26 @@
 postsChannelFunctions = () ->
 
   checkMe = (comment_id, username) ->
-    if $('meta[name=wizardwonka]').length < 1
-      $(".commentpartial[data-id=#{comment_id}] .editdeletebutton").remove()
-    $(".commentpartial[data-id=#{comment_id}]").removeClass("hidden")
+    unless $('meta[name=admin]').length > 0 || $("meta[user=\"#{username}]\"").length > 0
+      $("#commentpartial-#{comment_id} .editdeletebutton").remove()
 
-  if $('.commentscontainer').length > 0
+  createComment = (data) ->
+    console.log(data)
+    if $('.indexcomments').data().id == data.post.id
+      $('#comments').append(data.partial)
+      checkMe(data.comment.id, data.username)
+
+  updateComment = (data) ->
+    console.log(data)
+    if $('.indexcomments').data().id == data.post.id
+      $('#commentpartial-<%=@comment.id%>').replaceWith(data.partial)
+      checkMe(data.comment.id, data.username)
+
+  destroyComment = (data) ->
+    console.log(data)
+    $('#commentpartial-<%=@comment.id%>').remove()
+
+  if $('.indexcomments').length > 0
     App.posts_channel = App.cable.subscriptions.create {
       channel: "PostsChannel"
     },
@@ -13,10 +28,12 @@ postsChannelFunctions = () ->
       console.log("I'm loaded")
 
     disconnected: () ->
+      console.log("I'm unloaded")
 
     received: (data) ->
-      if $('.indexcomments').data().id == data.post.id && $(".comment[data-id=#{data.comment.id}]").length < 1
-        $('#comments').append(data.partial)
-        checkMe(data.comment.id)
+      switch data.type
+        when "create" then createComment(data)
+        when "update" then updateComment(data)
+        when "destroy" then destroyComment(data)
 
 $(document).on 'turbolinks:load', postsChannelFunctions

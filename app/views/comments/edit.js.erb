@@ -1,0 +1,5 @@
+console.log("Hello")
+$('#commentpartial-<%= @comment.id %>').html("<%=j render partial: 'comments/comment_edit', locals: {post: @post, comment: @comment} %>")
+
+$('#cancel2-<%= @comment.id %>').on("click" , function() { $('#commentpartial-<%= @comment.id %>').html("<%=j render partial: 'comments/comment', locals: {post: @post, comment: @comment} %>")
+})

@@ -2,14 +2,14 @@
   <div class = "commentscontainer">
     <h5>
       <div id="comments">
-        <% @comments.each do |comment| %>
-          <%= render partial: "comment", locals: { comment: comment, post: comment.post, current_user: comment.user } %>
+      <% @comments.each do |comment| %>
+          <%= render partial: "comment", locals: { comment: comment, post: @post } %>
         <% end %>
       </div>
     </h5>
 
     <div id="comments-form-container">
-      <%= render partial: "comment_form", locals: { comment: @comment, post: @post } %>
+      <%= render partial: "comment_form", locals: {post: @post,  comment: @comment} %>
     </div>
   </div>
 </div>

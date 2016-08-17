@@ -3,5 +3,5 @@ class Comment < ApplicationRecord
   belongs_to :user
 
   mount_uploader :image, ImageUploader
-  validates :body, length: { minimum: 20 }, presence: true
+  validates :body, length: { minimum: 5 }, presence: true
 end

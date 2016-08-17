@@ -10,8 +10,8 @@
       <% if current_user %>
         <meta user="<%=current_user.username%>">
         <% if current_user.admin? || current_user.moderator? %>
-          <meta name="wizardwonka">
-      <% end %>
+          <meta name="admin">
+        <% end %>
     <% end %>
   </head>
 

@@ -1,9 +1,9 @@
-<div class= "commentpartial" data-id="<%=comment.id%>">
+<div id = "commentpartial-<%=comment.id%>">
   <%= comment.body %>
     <div class= "editdeletebutton">
-      <% if current_user.admin? || current_user.moderator? %>
-        <%= link_to "Edit", edit_topic_post_comment_path(post.topic, post, comment) %>
-        <%= link_to "Delete", topic_post_comment_path(post.topic, post, comment), method: :delete, data:{confirm: "Confirm Delete?"} %>
+      <% if comment.user == current_user || current_user.admin? || current_user.moderator? %>
+        <%= link_to "Edit", edit_topic_post_comment_path(post.topic, post, comment), remote: true %>
+        <%= link_to "Delete", topic_post_comment_path(post.topic, post, comment), remote: true, method: :delete, data:{confirm: "Confirm Delete?"} %>
       <% end %>
     </div>
       <%= image_tag comment.image %>

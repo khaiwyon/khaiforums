@@ -4,10 +4,7 @@ class PostsChannel < ApplicationCable::Channel
     stream_from "posts_channel"
     logger.add_tags 'ActionCable', "User connected to posts channel"
   end
-
-  def unsubscribed
-  end
-
+  
   def unsubscribed
   end
 end
