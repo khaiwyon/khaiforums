@@ -14,7 +14,7 @@ postsChannelFunctions = () ->
     console.log(data)
     if $('.indexcomments').data().id == data.post.id
       $("#commentpartial-#{data.comment.id}").replaceWith(data.partial)
-      checkMe(data.comment.id, data.username)#testcheck
+      checkMe(data.comment.id, data.username)
 
   destroyComment = (data) ->
     console.log(data)

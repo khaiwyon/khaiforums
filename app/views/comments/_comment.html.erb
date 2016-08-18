@@ -6,5 +6,13 @@
         <%= link_to "Delete", topic_post_comment_path(post.topic, post, comment), remote: true, method: :delete, data:{confirm: "Confirm Delete?"} %>
       <% end %>
     </div>
+    <div class="comment-vote-container align">
+      <div class="comment-vote inline">
+        <%= link_to "Upvote", upvote_path(comment_id: comment.id), method: :post, remote: true%>
+        <%= link_to "Downvote", downvote_path(comment_id: comment.id), method: :post, remote: true%>
+      </div>
+      <div class="comment-total-votes inline" data-id="<%= comment.id %>">
+        <%=comment.total_votes%>
+      </div>
       <%= image_tag comment.image %>
 </div>

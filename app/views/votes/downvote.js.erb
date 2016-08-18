@@ -1,0 +1,2 @@
+$('#flash-messages-container').html("<%=j render partial: 'partials/flash_messages' %>")
+$('.comment-total-votes[data-id="<%= @vote.comment.id %>"]').html("<%= @vote.comment.total_votes%>")
