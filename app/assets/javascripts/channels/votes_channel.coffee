@@ -5,10 +5,12 @@ votesChannelFunctions = () ->
       channel: "VotesChannel"
     },
     connected: () ->
+      console.log("You have been connected")
 
     disconnected:() ->
 
-    received: () ->
-      $('.comment-total-votes[data-id="<%= @vote.comment.id %>"]').html("<%= @vote.comment.total_votes%>")
+    received: (data) ->
+      console.log("Yay")
+      $(".comment-total-votes[data-id=#{data.comment_id}]").replaceWith(data.value)
 
 $(document).on 'turbolinks:load', votesChannelFunctions

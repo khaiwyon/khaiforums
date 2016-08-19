@@ -1,4 +1,4 @@
-<div id = "commentpartial-<%=comment.id%>">
+<div id = "commentpartial-<%=comment.id%>" class="summonthewolf">
   <%= comment.body %>
     <div class= "editdeletebutton">
       <% if comment.user == current_user || current_user.admin? || current_user.moderator? %>
