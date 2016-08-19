@@ -1,4 +1,6 @@
 class Topic < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: [:slugged]
   has_many :posts
   belongs_to :user
   paginates_per 2

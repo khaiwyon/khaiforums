@@ -3,15 +3,15 @@ class CommentsController <ApplicationController
   before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
 
   def index
-    @topic = Topic.includes(:posts).find_by(id: params[:topic_id])
-    @post = Post.includes(:comments).find_by(id: params[:post_id])
+    @topic = Topic.includes(:posts).friendly.find(params[:topic_id])
+    @post = Post.includes(:comments).friendly.find(params[:post_id])
     @comments = @post.comments
     @comment = Comment.new
   end
 
   def create
-    @topic = Topic.find_by(id: params[:topic_id])
-    @post= Post.find_by(id: params[:post_id])
+    @topic = Topic.friendly.find(params[:topic_id])
+    @post= Post.friendly.find(params[:post_id])
     @comment = current_user.comments.build(comment_params.merge(post_id:params[:post_id]))
     @new_comment = Comment.new
 
@@ -24,15 +24,15 @@ class CommentsController <ApplicationController
   end
 
   def edit
-    @topic = Topic.find_by(id: params[:topic_id])
-    @post = Post.find_by(id: params[:post_id])
+    @topic = Topic.friendly.find(params[:topic_id])
+    @post = Post.friendly.find(params[:post_id])
     @comment = Comment.find_by(id: params[:id])
     authorize @comment
   end
 
   def update
-    @topic = Topic.find_by(id: params[:topic_id])
-    @post = Post.find_by(id: params[:post_id])
+    @topic = Topic.friendly.find(params[:topic_id])
+    @post = Post.friendly.find(params[:post_id])
     @comment = Comment.find_by(id: params[:id])
 
     if @comment.update(comment_params)
@@ -44,8 +44,8 @@ class CommentsController <ApplicationController
   end
 
   def destroy
-    @topic = Topic.find_by(id: params[:topic_id])
-    @post = Post.find_by(id: params[:post_id])
+    @topic = Topic.friendly.find(params[:topic_id])
+    @post = Post.friendly.find(params[:post_id])
     @comment = Comment.find_by(id: params[:id])
     authorize @comment
 
