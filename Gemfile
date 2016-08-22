@@ -26,6 +26,9 @@ gem 'redis', '~> 3.2'
 gem 'friendly_id', github: 'norman/friendly_id'
 
 group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'rspec-rails','~> 3.5'
   gem 'pry'
 end
 
@@ -36,5 +39,12 @@ group :development do
   gem 'letter_opener'
 end
 
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

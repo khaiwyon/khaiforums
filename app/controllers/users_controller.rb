@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
+   before_action :authenticate!, except: [:create, :new]
 
   def new
     @user = User.new
   end
 
   def edit
-    @user = User.find.by(id: params[:id])
+    @user = User.find_by(id: params[:id])
+    authorize @user
   end
 
   def create
@@ -22,7 +24,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find.by(id: params[:id])
+    @user = User.find_by(id: params[:id])
+    authorize @user
+
     if @user.update(user_params)
       flash[:success] = "You've successfully edited your User"
       redirect_to root_path
