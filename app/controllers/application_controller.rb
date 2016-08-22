@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     return unless session[:id]
     @current_user ||= User.find_by(id: session[:id])
   end
-  helper_method :current_user #check
+  helper_method :current_user
 
   def authenticate!
     unless current_user
